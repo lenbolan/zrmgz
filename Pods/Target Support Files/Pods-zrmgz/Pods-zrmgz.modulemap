@@ -1,0 +1,6 @@
+framework module Pods_zrmgz {
+  umbrella header "Pods-zrmgz-umbrella.h"
+
+  export *
+  module * { export * }
+}
