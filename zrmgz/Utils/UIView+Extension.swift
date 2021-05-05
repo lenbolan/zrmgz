@@ -61,6 +61,14 @@ extension UIView {
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    
+    var guide: UILayoutGuide {
+        if #available(iOS 11.0, *) {
+            return self.safeAreaLayoutGuide
+        } else {
+            return self.layoutMarginsGuide
+        }
+    }
 
 }
 
@@ -127,9 +135,8 @@ public extension UIView {
         self.layer.cornerRadius = radius
         if #available(iOS 11.0, *) {
             self.layer.maskedCorners = [
-                .layerMinXMinYCorner,
-                .layerMaxXMinYCorner,
-                .layerMaxXMaxYCorner
+                .layerMinXMaxYCorner,
+                .layerMinXMinYCorner
             ]
         } else {
             // Fallback on earlier versions
@@ -141,9 +148,8 @@ public extension UIView {
         self.layer.cornerRadius = radius
         if #available(iOS 11.0, *) {
             self.layer.maskedCorners = [
-                .layerMinXMinYCorner,
-                .layerMaxXMinYCorner,
-                .layerMinXMaxYCorner
+                .layerMaxXMaxYCorner,
+                .layerMaxXMinYCorner
             ]
         } else {
             // Fallback on earlier versions
@@ -155,6 +161,13 @@ public extension UIView {
 // MARK: - Background
 
 extension UIView {
+    
+    func setDefaultBackground() {
+        let topColor = UIColor(red: 68/255, green: 25/255, blue: 123/255, alpha: 1)
+        let bottomColor = UIColor.white
+        self.setBackgroundGradientColor(topColor: topColor, buttomColor: bottomColor, topPos: 0, bottomPos: 0.3)
+    }
+    
     func setBackgroundGradientColor(topColor: UIColor, buttomColor: UIColor, topPos: NSNumber, bottomPos: NSNumber) {
         //定义渐变的颜色（从黄色渐变到橙色）
 //        let topColor = UIColor(red: 199/255, green: 36/255, blue: 111/255, alpha: 1)
@@ -170,7 +183,7 @@ extension UIView {
         gradientLayer.locations = gradientLocations
 
         //设置其CAGradientLayer对象的frame，并插入view的layer
-        gradientLayer.frame = self.frame
+        gradientLayer.frame = UIScreen.main.bounds // self.frame
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }

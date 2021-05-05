@@ -274,7 +274,7 @@ extension Date {
     /// - Returns: Date类型
     static func stringConvertDate(string:String, dateFormat:String="yyyy-MM-dd HH:mm:ss") -> Date {
         let dateFormatter = DateFormatter.init()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = dateFormat
         let date = dateFormatter.date(from: string)
         return date!
     }

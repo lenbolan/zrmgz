@@ -123,7 +123,16 @@ class SignInViewController: UIViewController, AdButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
+//        self.view.backgroundColor = .white
+        
+        let bgView = UIView()
+        bgView.translatesAutoresizingMaskIntoConstraints = false
+        bgView.backgroundColor = .white
+        self.view.addSubview(bgView)
+        bgView.topAnchor.constraint(equalTo: view.guide.topAnchor, constant: 0).isActive = true
+        bgView.leadingAnchor.constraint(equalTo: view.guide.leadingAnchor, constant: 0).isActive = true
+        bgView.bottomAnchor.constraint(equalTo: view.guide.bottomAnchor, constant: 0).isActive = true
+        bgView.trailingAnchor.constraint(equalTo: view.guide.trailingAnchor, constant: 0).isActive = true
 
         requestRewardedVideoAd()
         

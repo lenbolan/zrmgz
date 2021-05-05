@@ -18,15 +18,15 @@ class AccountListViewController: UIViewController {
     let accountTable = AccountTable.init()
     
     var dateInfo = ""
-    var dateRange = [Int64]()
+    var dateRange = [Int]()
     var accountData = [Account]()
+    
+    var needRefresh = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let topColor = UIColor(red: 68/255, green: 25/255, blue: 123/255, alpha: 1)
-        let bottomColor = UIColor.white
-        view.setBackgroundGradientColor(topColor: topColor, buttomColor: bottomColor, topPos: 0, bottomPos: 0.3)
+        view.setDefaultBackground()
         
         print("... \(dateInfo) ...")
         
@@ -46,7 +46,7 @@ class AccountListViewController: UIViewController {
         var income:Double = 0
         var balance:Double = 0
         
-        let _recDate = Expression<Int64>.init("date")
+        let _recDate = Expression<Int>.init("date")
         let intDateStart = dateRange[0]
         let intDateEnd = dateRange[1]
         var _accountData: [Account]
@@ -74,6 +74,19 @@ class AccountListViewController: UIViewController {
         let douBalance = String(format: "%.2f", balance)
         lbBalance.text = "\(douBalance)"
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        needRefresh = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if needRefresh {
+            needRefresh = false
+            accountData.removeAll()
+            setData()
+            tableView.reloadData()
+        }
+    }
 
 }
 
@@ -90,5 +103,26 @@ extension AccountListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = AddAcountViewController()
+        vc.editAccount = accountData[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            let rowData = accountData[indexPath.row]
+            accountTable.delete(_id: rowData.id)
+            accountData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.setData()
+        }
+    }
 }

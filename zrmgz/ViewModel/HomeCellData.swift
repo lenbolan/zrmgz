@@ -13,7 +13,7 @@ struct HomeCellData {
     var title: String
     var subTitle: String
     var info: String
-    var range: [Int64]
+    var range: [Int]
     var income: String
     var expend: String
     

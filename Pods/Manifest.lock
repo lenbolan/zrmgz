@@ -1,4 +1,5 @@
 PODS:
+  - AAInfographics (6.0.0)
   - Ads-CN (3.5.1.2):
     - Ads-CN/BUAdSDK (= 3.5.1.2)
   - Ads-CN/BUAdSDK (3.5.1.2):
@@ -13,6 +14,7 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - AAInfographics (from `https://github.com/AAChartModel/AAChartKit-Swift.git`)
   - Ads-CN
   - SQLite.swift (~> 0.12.0)
   - SwiftHEXColors
@@ -25,12 +27,22 @@ SPEC REPOS:
     - SwiftHEXColors
     - Toast-Swift
 
+EXTERNAL SOURCES:
+  AAInfographics:
+    :git: https://github.com/AAChartModel/AAChartKit-Swift.git
+
+CHECKOUT OPTIONS:
+  AAInfographics:
+    :commit: 6e9e4b260a51e9c6b8e394334815bac61bc0eb0e
+    :git: https://github.com/AAChartModel/AAChartKit-Swift.git
+
 SPEC CHECKSUMS:
+  AAInfographics: e57c6cc15ddc17df3555db6f586fb0e1b911a0b7
   Ads-CN: c9f347beb4f9f3894ba1955eee224dd47c3da722
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftHEXColors: 1cb6e5d55c52749aa33db8f088ac55eb71ca4c7f
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: c15f24281d8fd4d46d9ab3004d4714ca3c81dc05
+PODFILE CHECKSUM: 6741f2bdc233af753cde1a2e7ffeda0e07234560
 
 COCOAPODS: 1.10.1
