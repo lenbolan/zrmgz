@@ -129,16 +129,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let formatter0 = DateFormatter()
         formatter0.dateFormat = "yyyyMMdd"
-        let intToday = Int64(formatter0.string(from: today)) ?? 0
-        let intWeekStart = Int64(formatter0.string(from: weekStart)) ?? 0
-        let intWeekEnd = Int64(formatter0.string(from: weekEnd)) ?? 0
+        let intToday = Int(formatter0.string(from: today)) ?? 0
+        let intWeekStart = Int(formatter0.string(from: weekStart)) ?? 0
+        let intWeekEnd = Int(formatter0.string(from: weekEnd)) ?? 0
         let strTheMonth = Date.add0BeforeNumber(theMonth)
-        let intMonthStart = Int64("\(theYear)\(strTheMonth)01") ?? 0
-        let intMonthEnd = Int64("\(theYear)\(strTheMonth)\(days)") ?? 0
+        let intMonthStart = Int("\(theYear)\(strTheMonth)01") ?? 0
+        let intMonthEnd = Int("\(theYear)\(strTheMonth)\(days)") ?? 0
         
         let _year = Expression<Int>.init("year")
         let _month = Expression<Int>.init("month")
-        let _recDate = Expression<Int64>.init("date")
+        let _recDate = Expression<Int>.init("date")
         let _data = accountTable.query(_filter: _year == today.year() && _month == today.month())
 //        let _data = accountTable.query(_filter: nil)
         for account in _data {
@@ -235,10 +235,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        needRefresh = false
-        options.removeAll()
-        setData()
-        tableView.reloadData()
+        if needRefresh {
+            needRefresh = false
+            options.removeAll()
+            setData()
+            tableView.reloadData()
+        }
     }
 
 }

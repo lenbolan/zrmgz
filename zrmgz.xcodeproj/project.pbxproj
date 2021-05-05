@@ -13,6 +13,9 @@
 		A114A8A3263BA0DC001C0509 /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A8A2263BA0DC001C0509 /* Salary.swift */; };
 		A114A8AC263BD803001C0509 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A8AA263BD803001C0509 /* SalaryViewController.swift */; };
 		A114A8AD263BD803001C0509 /* SalaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A114A8AB263BD803001C0509 /* SalaryViewController.xib */; };
+		A13471822640F1BA001E62D4 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13471802640F1BA001E62D4 /* ChartViewController.swift */; };
+		A13471832640F1BA001E62D4 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13471812640F1BA001E62D4 /* ChartViewController.xib */; };
+		A134718726410BCD001E62D4 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134718626410BCD001E62D4 /* AccountList.swift */; };
 		A1392035263E869200276D58 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1392033263E869200276D58 /* HomeTableViewCell.swift */; };
 		A1392036263E869200276D58 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1392034263E869200276D58 /* HomeTableViewCell.xib */; };
 		A139203A263E917A00276D58 /* HomeCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1392039263E917A00276D58 /* HomeCellData.swift */; };
@@ -88,6 +91,9 @@
 		A114A8A2263BA0DC001C0509 /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
 		A114A8AA263BD803001C0509 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		A114A8AB263BD803001C0509 /* SalaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalaryViewController.xib; sourceTree = "<group>"; };
+		A13471802640F1BA001E62D4 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A13471812640F1BA001E62D4 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
+		A134718626410BCD001E62D4 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		A1392033263E869200276D58 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A1392034263E869200276D58 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		A1392039263E917A00276D58 /* HomeCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellData.swift; sourceTree = "<group>"; };
@@ -311,14 +317,16 @@
 				A114A89E263B8FC5001C0509 /* AddSalaryViewController.xib */,
 				A154259E2636986C00BEE39A /* AddViewController.swift */,
 				A154259F2636986C00BEE39A /* AddViewController.xib */,
+				A13471802640F1BA001E62D4 /* ChartViewController.swift */,
+				A13471812640F1BA001E62D4 /* ChartViewController.xib */,
+				A14AB9A1263FE96100248B94 /* DailyCell.swift */,
+				A14AB9A2263FE96100248B94 /* DailyCell.xib */,
 				A15425AA2637141C00BEE39A /* EmployeeTableViewController.swift */,
 				A1392033263E869200276D58 /* HomeTableViewCell.swift */,
 				A1392034263E869200276D58 /* HomeTableViewCell.xib */,
 				A114A8AA263BD803001C0509 /* SalaryViewController.swift */,
 				A114A8AB263BD803001C0509 /* SalaryViewController.xib */,
 				A19F989E2637FE8400DA4A9E /* SignInViewController.swift */,
-				A14AB9A1263FE96100248B94 /* DailyCell.swift */,
-				A14AB9A2263FE96100248B94 /* DailyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 				A15425AF2637150A00BEE39A /* Employee.swift */,
 				A114A8A2263BA0DC001C0509 /* Salary.swift */,
 				A14417C6263D442300A2E5F1 /* Account.swift */,
+				A134718626410BCD001E62D4 /* AccountList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14417CA263D4C7300A2E5F1 /* ViewController.xib in Resources */,
+				A13471832640F1BA001E62D4 /* ChartViewController.xib in Resources */,
 				A15424982636498800BEE39A /* LaunchScreen.storyboard in Resources */,
 				A1392036263E869200276D58 /* HomeTableViewCell.xib in Resources */,
 				A15424952636498800BEE39A /* Assets.xcassets in Resources */,
@@ -497,8 +507,10 @@
 			files = (
 				A15425AB2637141C00BEE39A /* EmployeeTableViewController.swift in Sources */,
 				A139203A263E917A00276D58 /* HomeCellData.swift in Sources */,
+				A13471822640F1BA001E62D4 /* ChartViewController.swift in Sources */,
 				A15425B02637150A00BEE39A /* Employee.swift in Sources */,
 				A15425A02636986C00BEE39A /* AddViewController.swift in Sources */,
+				A134718726410BCD001E62D4 /* AccountList.swift in Sources */,
 				A114A8A3263BA0DC001C0509 /* Salary.swift in Sources */,
 				A15424CC2636550D00BEE39A /* Tables.swift in Sources */,
 				A1542598263692C200BEE39A /* String+Extension.swift in Sources */,
@@ -682,11 +694,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.youkeyun.salary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youkeyun.youcai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "zrmgz/BUAd-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -704,11 +716,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.youkeyun.salary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youkeyun.youcai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "zrmgz/BUAd-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

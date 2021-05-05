@@ -16,6 +16,7 @@ class HomeViewController: UITabBarController {
 
         addChildViewController(child: ViewController(), title: "明细", image: "yensign.circle", topTitle: "有财记账")
         addChildViewController(child: AddAcountViewController(), title: "记账", image: "plus.circle")
+        addChildViewController(child: ChartViewController(), title: "图表", image: "chart.pie")
         
         if UserDefaults.localData.keyAdmin.storedString != nil {
             addChildViewController(child: SignInViewController(), title: "签到", image: "s.circle")
@@ -34,9 +35,10 @@ class HomeViewController: UITabBarController {
         navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                    NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 22)]
         navVC.navigationBar.tintColor = .white
-        let topColor = UIColor(red: 68/255, green: 25/255, blue: 123/255, alpha: 1) // UIColor(hexString: "#ea66a6")!
-        let bottomColor = UIColor.white
-        child.view.setBackgroundGradientColor(topColor: topColor, buttomColor: bottomColor, topPos: 0, bottomPos: 0.3)
+//        let topColor = UIColor(red: 68/255, green: 25/255, blue: 123/255, alpha: 1) // UIColor(hexString: "#ea66a6")!
+//        let bottomColor = UIColor.white
+//        child.view.setBackgroundGradientColor(topColor: topColor, buttomColor: bottomColor, topPos: 0, bottomPos: 0.3)
+        child.view.setDefaultBackground()
         if topTitle == nil {
             child.title = title
         } else {

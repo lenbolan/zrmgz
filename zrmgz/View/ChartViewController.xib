@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChartViewController" customModule="zrmgz" customModuleProvider="target">
+            <connections>
+                <outlet property="btnExpend" destination="8fh-0F-eLx" id="P6g-Zf-qVe"/>
+                <outlet property="btnIncome" destination="apG-pk-1A0" id="0qT-7n-WoV"/>
+                <outlet property="btnMonth" destination="DpK-xa-KR8" id="i5h-AV-fbp"/>
+                <outlet property="btnWeek" destination="Lgd-0r-YbS" id="jVt-e7-XOK"/>
+                <outlet property="btnYear" destination="abm-Hu-LjN" id="dub-aI-Uv2"/>
+                <outlet property="container" destination="woY-tU-Akd" id="v3E-MG-agB"/>
+                <outlet property="container2" destination="l17-8H-SiB" id="Lg6-CS-xiY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWb-8G-aBY" userLabel="ViewBg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apG-pk-1A0">
+                    <rect key="frame" x="80" y="54" width="60" height="30"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Qsy-uS-ubX"/>
+                    </constraints>
+                    <state key="normal" title="收入">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapType:" destination="-1" eventType="touchUpInside" id="QRg-ol-O9D"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpK-xa-KR8">
+                    <rect key="frame" x="274" y="54" width="60" height="30"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="UXV-0t-GM7"/>
+                    </constraints>
+                    <state key="normal" title="本月">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapDate:" destination="-1" eventType="touchUpInside" id="Jgj-Oz-pYH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgd-0r-YbS">
+                    <rect key="frame" x="214" y="54" width="60" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Vs1-jV-Cg6"/>
+                    </constraints>
+                    <state key="normal" title="本周">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapDate:" destination="-1" eventType="touchUpInside" id="hrO-gZ-05T"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abm-Hu-LjN">
+                    <rect key="frame" x="334" y="54" width="60" height="30"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="WbV-0H-MfO"/>
+                    </constraints>
+                    <state key="normal" title="今年">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapDate:" destination="-1" eventType="touchUpInside" id="zn4-yR-laX"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woY-tU-Akd" userLabel="View1">
+                    <rect key="frame" x="0.0" y="99" width="414" height="260"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="woY-tU-Akd" secondAttribute="height" multiplier="207:130" id="jTY-1X-vFs"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-0F-eLx">
+                    <rect key="frame" x="20" y="54" width="60" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="z0o-Uc-Vju"/>
+                    </constraints>
+                    <state key="normal" title="支出">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapType:" destination="-1" eventType="touchUpInside" id="mAs-aO-u8e"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l17-8H-SiB" userLabel="View2">
+                    <rect key="frame" x="0.0" y="359" width="414" height="420"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="QWb-8G-aBY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1cV-fc-fTO"/>
+                <constraint firstItem="abm-Hu-LjN" firstAttribute="leading" secondItem="DpK-xa-KR8" secondAttribute="trailing" id="2LR-Cf-4nd"/>
+                <constraint firstItem="l17-8H-SiB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6ev-YY-dkq"/>
+                <constraint firstItem="Lgd-0r-YbS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="AJA-sM-QoT"/>
+                <constraint firstItem="woY-tU-Akd" firstAttribute="top" secondItem="8fh-0F-eLx" secondAttribute="bottom" constant="15" id="HWw-Gb-WEh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QWb-8G-aBY" secondAttribute="trailing" id="M2R-ln-JCU"/>
+                <constraint firstItem="l17-8H-SiB" firstAttribute="top" secondItem="woY-tU-Akd" secondAttribute="bottom" id="Pmq-uL-cLB"/>
+                <constraint firstItem="DpK-xa-KR8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="VM2-iH-kBh"/>
+                <constraint firstItem="apG-pk-1A0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="VfS-rL-A4y"/>
+                <constraint firstItem="8fh-0F-eLx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="WP5-dC-ROd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QWb-8G-aBY" secondAttribute="bottom" id="aVx-y0-nj6"/>
+                <constraint firstItem="woY-tU-Akd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="biX-5z-7B8"/>
+                <constraint firstItem="woY-tU-Akd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dnB-yq-Aaw"/>
+                <constraint firstItem="QWb-8G-aBY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eDz-cS-m9H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="abm-Hu-LjN" secondAttribute="trailing" constant="20" id="eOH-Af-Cyf"/>
+                <constraint firstItem="abm-Hu-LjN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="h5A-gT-fJx"/>
+                <constraint firstItem="l17-8H-SiB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="koi-1F-O5d"/>
+                <constraint firstItem="l17-8H-SiB" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-83" id="kwY-T8-IsI"/>
+                <constraint firstItem="8fh-0F-eLx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oTA-cC-7vm"/>
+                <constraint firstItem="DpK-xa-KR8" firstAttribute="leading" secondItem="Lgd-0r-YbS" secondAttribute="trailing" id="qxL-de-KDj"/>
+                <constraint firstItem="apG-pk-1A0" firstAttribute="leading" secondItem="8fh-0F-eLx" secondAttribute="trailing" id="wca-Bv-1Sd"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="89.732142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

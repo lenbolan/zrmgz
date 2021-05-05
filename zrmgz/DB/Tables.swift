@@ -165,14 +165,14 @@ class AccountTable{
     var sql: SqLiteManger
     
     let id = Expression<Int64>.init("id")
-    let sortId = Expression<Int64>.init("sid")
+    let sortId = Expression<Int>.init("sid")
     let sortName = Expression<String>.init("sName")
     let type = Expression<Int>.init("type")
     let num = Expression<Double>.init("num")
     let year = Expression<Int>.init("year")
     let month = Expression<Int>.init("month")
     let day = Expression<Int>.init("day")
-    let date = Expression<Int64>.init("date")
+    let date = Expression<Int>.init("date")
     
     var table: Table?
     
@@ -219,7 +219,15 @@ class AccountTable{
         var accounts = [Account]()
         for item in rows ?? [] {
             print(item[id], item[sortId], item[sortName], item[type], item[date])
-            let _account = Account(id: item[id], sortId: item[sortId], sortName: item[sortName], type: item[type], num: item[num], year: item[year], month: item[month], day: item[day], date: item[date])
+            let _account = Account(id: item[id],
+                                   sortId: item[sortId],
+                                   sortName: item[sortName],
+                                   type: item[type],
+                                   num: item[num],
+                                   year: item[year],
+                                   month: item[month],
+                                   day: item[day],
+                                   date: item[date])
             accounts.append(_account)
         }
         return accounts
@@ -228,7 +236,12 @@ class AccountTable{
     func update(_id: Int64, account: Account) {
         if sql.update(table: table, setters: [sortId <- account.sortId,
                                               sortName <- account.sortName,
-                                              num <- account.num], filter: id == _id) {
+                                              type <- account.type,
+                                              num <- account.num,
+                                              year <- account.year,
+                                              month <- account.month,
+                                              day <- account.day,
+                                              date <- account.date], filter: id == _id) {
             print("update success.")
         }
     }
